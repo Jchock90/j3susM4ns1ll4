@@ -31,11 +31,11 @@ const Navbar = () => {
         </div>
       </div>
       {isOpen && (
-        <div className="md:hidden bg-darkGray bg-opacity-90 text-center">
-          <Link to="/" className="block py-2 text-lightGray hover:text-violet transition" onClick={toggleMenu}>Audio</Link>
-          <Link to="/soundtrack" className="block py-2 text-lightGray hover:text-violet transition" onClick={toggleMenu}>Soundtrack</Link>
-          <Link to="/gallery" className="block py-2 text-lightGray hover:text-violet transition" onClick={toggleMenu}>Galería</Link>
-          <Link to="/contact" className="block py-2 text-lightGray hover:text-violet transition" onClick={toggleMenu}>Contacto</Link>
+        <div className="md:hidden flex justify-center items-center space-x-4 bg-opacity-90 mt-2">
+          <Link to="/" className="text-lightGray hover:text-violet transition" onClick={toggleMenu}>Audio</Link>
+          <Link to="/soundtrack" className="text-lightGray hover:text-violet transition" onClick={toggleMenu}>Soundtrack</Link>
+          <Link to="/gallery" className="text-lightGray hover:text-violet transition" onClick={toggleMenu}>Galería</Link>
+          <Link to="/contact" className="text-lightGray hover:text-violet transition" onClick={toggleMenu}>Contacto</Link>
         </div>
       )}
     </nav>
