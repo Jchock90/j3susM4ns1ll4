@@ -13,7 +13,7 @@ const Navbar = () => {
   const words = ['JESÚS MANSILLA', 'REPLICANT', 'FLOW MY TEARS'];
 
   return (
-    <nav className="bg-darkGray bg-opacity-70 p-4 fixed w-full z-10">
+    <nav className="bg-darkGray bg-opacity-80 p-4 fixed w-full z-10">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="text-gray-300 text-2xl font-bold text-opacity-90">
           <Typewriter words={words} />
