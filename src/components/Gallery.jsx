@@ -1,11 +1,11 @@
 // src/components/Gallery.js
-
-
 import React, { useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { useTranslation } from 'react-i18next';
 
 const Gallery = () => {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState('');
   const [selectedDescription, setSelectedDescription] = useState('');
@@ -35,7 +35,7 @@ const Gallery = () => {
 
   return (
     <div className="container mx-auto p-4 pt-20 text-center">
-      <h1 className="text-xl my-1 mt-20 mb-8 text-gray-300">Galería</h1>
+      <h1 className="text-xl my-1 mt-20 mb-8 text-gray-300">{t('Galería')}</h1>
       <div className="my-8">
         <Carousel
           showThumbs={false}
@@ -59,18 +59,6 @@ const Gallery = () => {
             )
           }
         >
-          {/* Images */}
-          {images.map((image, index) => (
-            <div
-              key={index}
-              onClick={() => openModal(image.src, image.description)}
-              className="cursor-pointer flex justify-center items-center w-[300px] md:w-[400px] lg:w-[600px] mx-auto h-80"
-            >
-              <img src={image.src} alt={image.alt} className="mx-auto max-h-full object-contain" />
-            </div>
-          ))}
-
-          {/* Videos */}
           <div className="flex justify-center items-center  w-[350px] md:w-[500px] lg:w-[600px] mx-auto h-80">
             <iframe
               className="mx-auto"
@@ -110,6 +98,17 @@ const Gallery = () => {
               style={{ maxWidth: '100%' }}
             ></iframe>
           </div>
+          {images.map((image, index) => (
+            <div
+              key={index}
+              onClick={() => openModal(image.src, image.description)}
+              className="cursor-pointer flex justify-center items-center w-[300px] md:w-[400px] lg:w-[600px] mx-auto h-80"
+            >
+              <img src={image.src} alt={image.alt} className="mx-auto max-h-full object-contain" />
+            </div>
+          ))}
+
+          
         </Carousel>
       </div>
 
@@ -132,4 +131,3 @@ const Gallery = () => {
 };
 
 export default Gallery;
-

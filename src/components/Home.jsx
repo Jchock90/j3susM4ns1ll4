@@ -1,11 +1,11 @@
 // src/components/Home.js
-
-
 import React, { useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { useTranslation } from 'react-i18next';
 
 const Home = () => {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState('');
 
@@ -20,7 +20,7 @@ const Home = () => {
 
   return (
     <div className="container mx-auto p-4 pt-20 text-center overflow-hidden relative">
-            <h1 className="text-xl my-1 mt-20  text-gray-300">Audio</h1>
+      <h1 className="text-xl my-1 mt-20 text-gray-300">{t('Audio')}</h1>
 
       <Carousel
         showThumbs={false}
@@ -44,7 +44,35 @@ const Home = () => {
           )
         }
       >
-        {/* Bandcamp embeds */}
+        {/* Contenido original con iframes */}
+        <div className="p-2">
+          <div className="flex justify-center">
+            <iframe
+              title="Convergent evolution of life"
+              style={{ border: 0, width: '245px', height: '329px' }}
+              src="https://bandcamp.com/EmbeddedPlayer/track=2709675676/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
+              seamless
+            >
+              <a href="https://jesusmansillapna.bandcamp.com/track/convergent-evolution-of-life">
+                Convergent evolution of life by Jesús Mansilla
+              </a>
+            </iframe>
+          </div>
+        </div>
+        <div className="p-2">
+          <div className="flex justify-center">
+            <iframe
+              style={{ border: 0, width: '245px', height: '329px' }}
+              src="https://bandcamp.com/EmbeddedPlayer/album=1489493561/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/track=620347450/transparent=true/"
+              seamless
+              title="Ciberdelia - Volumen 1"
+            >
+              <a href="https://cphnkx.bandcamp.com/album/ciberdelia-volumen-1">
+                Ciberdelia - Volumen 1 de replicant
+              </a>
+            </iframe>
+          </div>
+        </div>
         <div className="p-2">
           <div className="flex justify-center">
             <iframe
@@ -55,19 +83,6 @@ const Home = () => {
             >
               <a href="https://jesusmansillapna.bandcamp.com/album/take-care-of-yourself">Take care of yourself by Jesús Mansilla</a>
             </iframe>
-          </div>
-        </div>
-        <div className="p-2">
-          <div className="flex justify-center">
-          <iframe
-              title="Convergent evolution of life"
-              style={{ border: 0, width: '245px', height: '329px' }}
-              src="https://bandcamp.com/EmbeddedPlayer/track=2709675676/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
-              seamless
-            >
-              <a href="https://jesusmansillapna.bandcamp.com/track/convergent-evolution-of-life">Convergent evolution of life by Jesús Mansilla</a>
-            </iframe>
-            
           </div>
         </div>
         <div className="p-2">
@@ -96,7 +111,7 @@ const Home = () => {
         </div>
         <div className="p-2">
           <div className="flex justify-center">
-          <iframe
+            <iframe
               title="Tender Softly Hardware"
               style={{ border: 0, width: '245px', height: '329px' }}
               src="https://bandcamp.com/EmbeddedPlayer/album=1018582991/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
@@ -104,10 +119,8 @@ const Home = () => {
             >
               <a href="https://r3plic4nt.bandcamp.com/album/tender-softly-hardware">Tender Softly Hardware by Replicant</a>
             </iframe>
-            
           </div>
         </div>
-        
         <div className="p-2">
           <div className="flex justify-center">
             <iframe
@@ -132,8 +145,6 @@ const Home = () => {
             </iframe>
           </div>
         </div>
-        
-        
       </Carousel>
 
       {isOpen && (
