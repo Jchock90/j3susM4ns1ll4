@@ -16,7 +16,6 @@ const Navbar = () => {
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
-    setIsOpen(false); 
   };
 
   const words = ['JESÚS MANSILLA', 'REPLICANT', 'FLOW MY TEARS'];
@@ -33,12 +32,13 @@ const Navbar = () => {
           <Link to="/gallery" className="text-lightGray hover:text-violet transition">{t('Galería')}</Link>
           <Link to="/contact" className="text-lightGray hover:text-violet transition">{t('Contacto')}</Link>
           
+          {/* Botones de selección de idioma */}
           <div className="flex space-x-4 items-center">
             <button onClick={() => changeLanguage('en')} className="focus:outline-none">
-              <img src={UKFlag} alt="English" className="h-6" />
+              <img src={UKFlag} alt="English" className="h-6 w-8" />
             </button>
             <button onClick={() => changeLanguage('es')} className="focus:outline-none">
-              <img src={SpainFlag} alt="Español" className="h-6" />
+              <img src={SpainFlag} alt="Español" className="h-6 w-8" />
             </button>
           </div>
         </div>
@@ -50,19 +50,18 @@ const Navbar = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden flex justify-center items-center space-x-4 mt-2">
-          <Link to="/" className="text-lightGray hover:text-violet transition" onClick={toggleMenu}>{t('Audio')}</Link>
-          <Link to="/soundtrack" className="text-lightGray hover:text-violet transition" onClick={toggleMenu}>{t('Soundtrack')}</Link>
-          <Link to="/gallery" className="text-lightGray hover:text-violet transition" onClick={toggleMenu}>{t('Galería')}</Link>
-          <Link to="/contact" className="text-lightGray hover:text-violet transition" onClick={toggleMenu}>{t('Contacto')}</Link>
+        <div className="md:hidden flex justify-center items-center space-x-2 mt-2">
+          <Link to="/" className="text-lightGray hover:text-violet transition text-sm">{t('Audio')}</Link>
+          <Link to="/soundtrack" className="text-lightGray hover:text-violet transition text-sm">{t('Soundtrack')}</Link>
+          <Link to="/gallery" className="text-lightGray hover:text-violet transition text-sm">{t('Galería')}</Link>
+          <Link to="/contact" className="text-lightGray hover:text-violet transition text-sm">{t('Contacto')}</Link>
           
-          {/* Botones de selección de idioma */}
-          <div className="flex space-x-4">
+          <div className="flex space-x-2">
             <button onClick={() => changeLanguage('en')} className="focus:outline-none">
-              <img src={UKFlag} alt="English" className="h-6" />
+              <img src={UKFlag} alt="English" className="h-4 w-6" />
             </button>
             <button onClick={() => changeLanguage('es')} className="focus:outline-none">
-              <img src={SpainFlag} alt="Español" className="h-6" />
+              <img src={SpainFlag} alt="Español" className="h-4 w-6" />
             </button>
           </div>
         </div>
