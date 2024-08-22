@@ -27,9 +27,9 @@ const Navbar = () => {
           <Typewriter words={words} />
         </Link>
         <div className="hidden md:flex space-x-6 items-center">
+          <Link to="/gallery" className="text-lightGray hover:text-violet transition">{t('Galería')}</Link>
           <Link to="/" className="text-lightGray hover:text-violet transition">{t('Audio')}</Link>
           <Link to="/soundtrack" className="text-lightGray hover:text-violet transition">{t('Soundtrack')}</Link>
-          <Link to="/gallery" className="text-lightGray hover:text-violet transition">{t('Galería')}</Link>
           <Link to="/contact" className="text-lightGray hover:text-violet transition">{t('Contacto')}</Link>
           
           {/* Botones de selección de idioma */}
