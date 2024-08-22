@@ -27,7 +27,7 @@ const Navbar = () => {
           <Typewriter words={words} />
         </Link>
         <div className="hidden md:flex space-x-6 items-center">
-          <Link to="/gallery" className="text-lightGray hover:text-violet transition">{t('Galería')}</Link>
+          <Link to="/" className="text-lightGray hover:text-violet transition">{t('Galería')}</Link>
           <Link to="/audio" className="text-lightGray hover:text-violet transition">{t('Audio')}</Link>
           <Link to="/soundtrack" className="text-lightGray hover:text-violet transition">{t('Soundtrack')}</Link>
           <Link to="/contact" className="text-lightGray hover:text-violet transition">{t('Contacto')}</Link>
@@ -51,7 +51,7 @@ const Navbar = () => {
 
       {isOpen && (
         <div className="md:hidden flex justify-center items-center space-x-2 mt-2">
-          <Link to="/gallery" className="text-lightGray hover:text-violet transition text-sm">{t('Galería')}</Link>
+          <Link to="/" className="text-lightGray hover:text-violet transition text-sm">{t('Galería')}</Link>
           <Link to="/audio" className="text-lightGray hover:text-violet transition text-sm">{t('Audio')}</Link>
           <Link to="/soundtrack" className="text-lightGray hover:text-violet transition text-sm">{t('Soundtrack')}</Link>
           <Link to="/contact" className="text-lightGray hover:text-violet transition text-sm">{t('Contacto')}</Link>
