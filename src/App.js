@@ -7,7 +7,8 @@ import Home from './components/Home';
 import Soundtrack from './components/Soundtrack';
 import Gallery from './components/Gallery';
 import Contact from './components/Contact';
-import './index.css'; // Asegurarse de que los estilos se importen
+import './index.css'; 
+
 
 function App() {
   return (
@@ -16,9 +17,9 @@ function App() {
         <NavBar />
         <main className="flex-grow">
           <Routes>
-            <Route path="/" element={<Gallery />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/soundtrack" element={<Soundtrack />} />
+            <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
@@ -29,3 +30,4 @@ function App() {
 }
 
 export default App;
+
