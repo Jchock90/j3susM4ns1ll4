@@ -59,6 +59,19 @@ const Gallery = () => {
             )
           }
         >
+          <div className="flex justify-center items-center w-[350px] md:w-[500px] lg:w-[600px] mx-auto h-80">
+            <iframe
+              className="mx-auto"
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/djx--zux3lM?si=92RWcbFtz1UeyZ8E"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{ maxWidth: '100%' }}
+            ></iframe>
+          </div>
           <div className="flex justify-center items-center  w-[350px] md:w-[500px] lg:w-[600px] mx-auto h-80">
             <iframe
               className="mx-auto"
